@@ -57,14 +57,15 @@ class App extends Component {
       },
       ...this.state.rooms.slice(unbookRoom + 1),
     ];
-
-    this.setState(state => ({
-      ...state,
-      rooms: newRooms,
-      unbookingRoomDate: null,
-      unbookingRoomId: null,
-      showModal: false,
-    }));
+    addItems(newRooms).then(rooms =>
+      this.setState(state => ({
+        ...state,
+        rooms: rooms,
+        unbookingRoomDate: null,
+        unbookingRoomId: null,
+        showModal: false,
+      })),
+    );
   };
   bookRoom = event => {
     event.preventDefault();
