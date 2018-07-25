@@ -12,7 +12,10 @@ const Rooms = ({ rooms, bookEvent, unbookEvent }) => {
   const days = getWeekDays(startOfWeek, endOfWeek);
   const renderTableHead = () => (
     <thead>
-      <tr>{days.map(e => <td key={uuid()}>{e.date()}</td>)}</tr>
+      <tr>
+        <th />
+        {days.map(e => <td key={uuid()}>{e.date()}</td>)}
+      </tr>
     </thead>
   );
   const renderTableBody = () => {
@@ -20,6 +23,10 @@ const Rooms = ({ rooms, bookEvent, unbookEvent }) => {
       <tbody>
         {rooms.map(room => (
           <tr key={uuid()}>
+            <th>
+              {+room.id + 1}
+              {room.isVip ? ' vip' : ' standart'}
+            </th>
             {days.map(day => {
               const isBooked = isSameDate(day, room.book);
               return (

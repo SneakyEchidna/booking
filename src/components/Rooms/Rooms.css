@@ -1,8 +1,14 @@
+td {
+  width: 3%;
+  text-align: center;
+}
+th {
+  width: 1%;
+  text-align: left;
+}
 .booked {
-  width: 5%;
   background-color: red;
 }
 .free {
-  width: 5%;
   background-color: green;
 }
