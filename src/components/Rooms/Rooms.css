@@ -1,0 +1,8 @@
+.booked {
+  width: 5%;
+  background-color: red;
+}
+.free {
+  width: 5%;
+  background-color: green;
+}
